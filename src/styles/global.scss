@@ -1,5 +1,5 @@
 $colorTextInput: #A5A2A2;
-$headerBackgroundColor: #3498DB;
+$headerBackgroundColor: #78c8f9;
 $backGroundPanelInput: #f3f3f3;
 $white: #fff;
 
@@ -8,6 +8,16 @@ $white: #fff;
     width: $width;
     height: $height;
     background: url($url) center/contain no-repeat;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 * {

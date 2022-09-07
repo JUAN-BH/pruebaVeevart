@@ -4,7 +4,11 @@ const api = axios.create({
 
 function renderLocalPokemons(data) {
   data.map((element) => {
-    const pokemonItem = document.createElement("article");
+    const pokemonItem = document.createElement(
+      "article",
+      "animate__animated",
+      "animate__fadeIn"
+    );
     pokemonItem.classList.add("pokemonsContainer__pokemonItem");
     const pokemonImage = document.createElement("img");
     pokemonImage.classList.add("pokemonItem__image");
@@ -13,7 +17,8 @@ function renderLocalPokemons(data) {
 
     pokemonImage.src = element.sprites.front_default;
     pokemonImage.setAttribute("alt", element.name);
-    pokemonName.innerText = element.name;
+    pokemonName.innerText =
+      element.name.charAt(0).toUpperCase() + element.name.slice(1);
     pokemonItem.setAttribute("id", element.id);
     pokemonItem.appendChild(pokemonImage);
     pokemonItem.appendChild(pokemonName);
@@ -41,7 +46,8 @@ function renderDetailsPokemonLocals(pokemonFiltered) {
   movesContainer.appendChild(movesTitle);
 
   pokemonFiltered.map((e) => {
-    pokemonDetailsName.innerText = e.name;
+    pokemonDetailsName.innerText =
+      e.name.charAt(0).toUpperCase() + e.name.slice(1);
     pokemonImageFront.src = e.sprites.front_default;
     pokemonImageBack.src = e.sprites.back_default;
     pokemonImageLateral.src = e.sprites.front_shiny;
@@ -78,7 +84,11 @@ function renderDetailsPokemonLocals(pokemonFiltered) {
 }
 function renderSearchedPokemons(data) {
   const pokemonItem = document.createElement("article");
-  pokemonItem.classList.add("pokemonsContainer__pokemonItem");
+  pokemonItem.classList.add(
+    "pokemonsContainer__pokemonItem",
+    "animate__animated",
+    "animate__fadeIn"
+  );
   const pokemonImage = document.createElement("img");
   pokemonImage.classList.add("pokemonItem__image");
   const pokemonName = document.createElement("h2");
@@ -86,7 +96,8 @@ function renderSearchedPokemons(data) {
 
   pokemonImage.src = data.sprites.front_default;
   pokemonImage.setAttribute("alt", data.name);
-  pokemonName.innerText = data.name;
+  pokemonName.innerText =
+    data.name.charAt(0).toUpperCase() + data.name.slice(1);
   pokemonItem.setAttribute("id", data.name);
   pokemonItem.appendChild(pokemonImage);
   pokemonItem.appendChild(pokemonName);
@@ -110,7 +121,8 @@ function renderDetailsPokemonSearched(data) {
   movesTitle.innerText = "Moves";
   movesContainer.appendChild(movesTitle);
 
-  pokemonDetailsName.innerText = data.name;
+  pokemonDetailsName.innerText =
+    data.name.charAt(0).toUpperCase() + data.name.slice(1);
   pokemonImageFront.src = data.sprites.front_default;
   pokemonImageBack.src = data.sprites.back_default;
   pokemonImageLateral.src = data.sprites.front_shiny;
@@ -150,9 +162,18 @@ async function getLocalPokemons() {
   renderLocalPokemons(data);
 }
 async function getPokemonsSearch(query) {
-  const { data, status } = await api(`pokemon/${query}`);
-  console.log(data);
-  renderSearchedPokemons(data);
+  try {
+    modalLoading.classList.remove("hidden");
+    const { data, status } = await api(`pokemon/${query}`);
+    modalLoading.classList.add("hidden");
+    renderSearchedPokemons(data);
+  } catch (e) {
+    modalLoading.classList.add("hidden");
+    modalSearchFail.classList.remove("hidden");
+    closeModalFailure.addEventListener("click", () => {
+      modalSearchFail.classList.add("hidden");
+    });
+  }
 }
 
 searchInput.addEventListener("keypress", (e) => {

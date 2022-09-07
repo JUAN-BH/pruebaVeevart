@@ -3,6 +3,8 @@ const $$ = (element) => document.querySelectorAll(element);
 //*Sections
 const pokemonesMain = $(".pokemonsContainer");
 const pokemonDetails = $(".pokemonDetails");
+const modalSearchFail = $(".modalFail");
+const modalLoading = $(".modalLoading");
 //*Elements
 const headerTitle = $(".headerTitle");
 const pokemonItemImage = $(".pokemonItem__image");
@@ -18,3 +20,5 @@ const pokemonImageBack = $(".imageBack");
 const abilitiesContainer = $(".detailsContainer__abilites");
 const abilitesTitle = $(".abilites__title");
 const movesContainer = $(".detailsContainer__moves");
+
+const closeModalFailure = $(".closeModalFail");

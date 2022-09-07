@@ -15,6 +15,10 @@
       rel="icon"
       href="./src/assets/icons/e7cde7fd0b8b992d7b74d2580a70b624.png"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="./src/styles/style.css" />
   </head>
   <body>
@@ -38,7 +42,7 @@
     </header>
     <main>
       <section class="pokemonsContainer"></section>
-      <section class="pokemonDetails hidden">
+      <section class="pokemonDetails hidden animate__animated animate__fadeIn">
         <h2 class="pokemonDetails__pokemonName">---</h2>
         <article class="pokemonDetails__pokemonImages">
           <img src="" alt="" class="pokemonImages__image imageFront" />
@@ -55,6 +59,18 @@
         </article>
       </section>
     </main>
+    <section class="modalFail hidden">
+      <article>
+        <h2>
+          Ups! <br />
+          we couldn't find that pokemon
+        </h2>
+        <button class="closeModalFail">search another pokemon</button>
+      </article>
+    </section>
+    <section class="modalLoading hidden">
+      <span class="modalLoading__logo"></span>
+    </section>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./src/scripts/nodes.js"></script>

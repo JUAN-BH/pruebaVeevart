@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poke API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="./src/assets/icons/e7cde7fd0b8b992d7b74d2580a70b624.png"
+    />
+    <link rel="stylesheet" href="./src/styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="headerTitle">
+        <span class="headerTitle__logo"></span> Pokemon
+      </h1>
+      <article class="headerInputSearch">
+        <div class="headerInputSearch__containerInput">
+          <span class="containerInput__icon"></span>
+          <input
+            type="text"
+            class="containerInput__input"
+            placeholder="search"
+          />
+        </div>
+        <button class="headerInputSearch__btnSearch">
+          <span class="btnSearch__icon"></span>
+        </button>
+      </article>
+    </header>
+    <main>
+      <section class="pokemonsContainer"></section>
+      <section class="pokemonDetails hidden">
+        <h2 class="pokemonDetails__pokemonName">---</h2>
+        <article class="pokemonDetails__pokemonImages">
+          <img src="" alt="" class="pokemonImages__image imageFront" />
+          <img src="" alt="" class="pokemonImages__image imageBack" />
+          <img src="" alt="" class="pokemonImages__image imageLateral" />
+        </article>
+        <article class="pokemonDetails__detailsContainer">
+          <ul class="detailsContainer__abilites">
+            <li><h2 class="abilites__title">Abilities</h2></li>
+          </ul>
+          <ul class="detailsContainer__moves">
+            <li><h2 class="moves__title">Moves</h2></li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+  <script src="./src/scripts/nodes.js"></script>
+  <script src="./src/scripts/navigation.js"></script>
+  <script src="./src/scripts/index.js"></script>
+</html>

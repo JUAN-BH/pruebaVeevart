@@ -1,0 +1,124 @@
+[
+  {
+    "id": 132,
+    "name": "ditto",
+    "order": 203,
+    "height": 3,
+    "abilities": [
+      {
+        "ability": {
+          "name": "limber",
+          "effect_entries":[
+             {
+                "effect":"This Pokémon cannot be paralyzed.\n\nIf a Pokémon is paralyzed and acquires this ability, its paralysis is healed; this includes when regaining a lost ability upon leaving battle.",
+                "short_effect":"Prevents paralysis."
+             }
+          ]
+        },
+        "is_hidden": false,
+        "slot": 1
+      },
+      {
+        "ability": {
+          "name": "imposter",
+          "effect_entries":[
+            {
+               "effect":"This Pokémon transforms into a random opponent upon entering battle.  This effect is identical to the move transform.",
+               "short_effect":"Transforms upon entering battle."
+            }
+         ]
+        },
+        "is_hidden": true,
+        "slot": 3
+      }
+    ],
+    "moves": [
+      {
+        "move": {
+          "name": "transform"
+        },
+        "effect_entries":[
+          {
+             "effect":"User copies the target's species, weight, type, ability, calculated stats (except HP), and moves.  Copied moves will all have 5 PP remaining.  IVs are copied for the purposes of hidden power, but stats are not recalculated.\n\nchoice band, choice scarf, and choice specs stay in effect, and the user must select a new move.\n\nThis move cannot be copied by mirror move, nor forced by encore.",
+             "short_effect":"User becomes a copy of the target until it leaves battle."
+          }
+       ]
+      }
+    ],
+    "sprites": {
+      "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png",
+      "back_female": null,
+      "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/132.png",
+      "back_shiny_female": null,
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
+      "front_female": null,
+      "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png",
+      "front_shiny_female": null
+    }
+  },
+  {
+    "id": 25,
+    "name": "pikachu",
+    "order": 35,
+    "height": 4,
+    "abilities": [
+      {
+        "ability": {
+          "name": "static",
+          "effect_entries":[
+            {
+               "effect":"Wenn ein Pokémon mit dieser Fähigkeit von einer Attacke mit Kontakt getroffen wird, besteht eine 30% Chance, dass der Angreifer paralysiert wird.\n\nPokémon die immun gegen electric Attacken sind können trotzdem von dieser Fähigkeit paralysiert werden.\n\nAußerhalb vom Kampf: Wenn ein Pokémon mit dieser Fähigkeit an erster Stelle im Team steht, besteht eine 50% Chance einem electric Pokémon zu begegnen, falls es welche gibt.",
+               "short_effect":"30% Chance das angreifende Pokémon bei Kontakt zu paralysieren."
+            },
+            {
+               "effect":"Whenever a move makes contact with this Pokémon, the move's user has a 30% chance of being paralyzed.\n\nPokémon that are immune to electric-type moves can still be paralyzed by this ability.\n\nOverworld: If the lead Pokémon has this ability, there is a 50% chance that encounters will be with an electric Pokémon, if applicable.",
+               "short_effect":"Has a 30% chance of paralyzing attacking Pokémon on contact."
+            }
+         ]
+        },
+        "is_hidden": false,
+        "slot": 1
+      },
+      {
+        "ability": {
+          "name": "lightning-rod",
+          "effect_entries":[
+            {
+               "effect":"Wenn sich ein Pokémon mit dieser Fähigkeit im Kampf befindet, werden alle electric Attacken die nur 1 Ziel haben auf dieses Pokémon umgeleitet, sofern es ein mögliches Ziel ist. Wird es von electric Attacken getroffen, erhöht sich sein special attack um 1 Stufe, jeder andere Effekt der Attacke wird ignoriert.\n\nWenn das eigentliche Ziel der Attacke ebenfalls diese Fähigkeit besitzt, wird sie nicht umgeleitet. Gibt es mehrere Pokémon mit dieser Fähigkeit, wird die Attacke zu dem mit der höchsten speed umgeleitet, oder, falls alle die gleiche haben, zu einem zufälligen Pokémon. follow me wirkt vor dieser Fähigkeit.\n\nWenn das Pokémon mit dieser Fähigkeit vom Typ ground ist, verhindert seine electric Immunität das Ansteigen des Spezialangriffs.",
+               "short_effect":"Leitet electric Attacken mit nur einem Ziel auf dieses Pokémon um. Absorbiert electric Attacken und erhöht dabei den special attack um 1 Stufe."
+            },
+            {
+               "effect":"All other Pokémon's single-target electric-type moves are redirected to this Pokémon if it is an eligible target.  Other Pokémon's Electric moves raise this Pokémon's Special Attack one stage, negating any other effect on it, and cannot miss it.\n\nIf the move's intended target also has this ability, the move is not redirected.  When multiple Pokémon with this ability are possible targets for redirection, the move is redirected to the one with the highest Speed stat, or, in the case of a tie, to a random tied Pokémon.  follow me takes precedence over this ability.\n\nIf the Pokémon is a ground-type and thus immune to Electric moves, its immunity prevents the Special Attack boost.",
+               "short_effect":"Redirects single-target electric moves to this Pokémon where possible.  Absorbs Electric moves, raising Special Attack one stage."
+            }
+         ]
+        },
+        "is_hidden": true,
+        "slot": 3
+      }
+    ],
+    "moves": [
+      {
+        "move": {
+          "name": "mega-punch"
+        },
+        "effect_entries":[
+          {
+            "effect":"Inflicts regular damage.",
+            "short_effect":"Inflicts regular damage with no additional effect."
+         }
+       ]
+      }
+    ],
+    "sprites": {
+      "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
+      "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/25.png",
+      "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/25.png",
+      "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/25.png",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+      "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/25.png",
+      "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png",
+      "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/25.png"
+    }
+  }
+]

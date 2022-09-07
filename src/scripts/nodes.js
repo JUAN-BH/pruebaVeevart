@@ -7,6 +7,8 @@ const pokemonDetails = $(".pokemonDetails");
 const headerTitle = $(".headerTitle");
 const pokemonItemImage = $(".pokemonItem__image");
 const pokemonItemName = $(".pokemonItem__name");
+const searchInput = $(".containerInput__input");
+const btnSearch = $(".headerInputSearch__btnSearch");
 
 const pokemonDetailsName = $(".pokemonDetails__pokemonName");
 const pokemonImages = $(".pokemonDetails__pokemonImages");

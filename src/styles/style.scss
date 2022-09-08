@@ -220,14 +220,7 @@ main {
 }
 
 .modalFail {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.471);
+    @include modal();
 
     article {
         position: absolute;
@@ -276,14 +269,7 @@ main {
 }
 
 .modalLoading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.471);
+    @include modal();
 
     &__logo {
         position: absolute;
@@ -298,6 +284,55 @@ main {
     }
 }
 
+.modalAlreadyExists {
+    @include modal();
+
+    article {
+        position: absolute;
+        left: calc(50% - 124px);
+        top: calc(50% - 127px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 248px;
+        height: 254px;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        background-color: $backGroundPanelInput;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            // transition: all 0.3s;
+
+            background: $backGroundPanelInput;
+            transform: translateY(-0.1em);
+            transition: transform 0.1s ease;
+
+        }
+
+        button:hover {
+            transform: translateY(-0.18em);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+
+    }
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -305,10 +340,6 @@ main {
 ::-webkit-scrollbar-track {
     background-color: transparent;
 }
-
-// ::-webkit-scrollbar-thumb {
-//     background-color: #d6dee1;
-// }
 
 ::-webkit-scrollbar-thumb {
     background-color: #d6dee195;

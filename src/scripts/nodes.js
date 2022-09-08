@@ -5,6 +5,7 @@ const pokemonesMain = $(".pokemonsContainer");
 const pokemonDetails = $(".pokemonDetails");
 const modalSearchFail = $(".modalFail");
 const modalLoading = $(".modalLoading");
+const modalAlreadyExists = $(".modalAlreadyExists");
 //*Elements
 const headerTitle = $(".headerTitle");
 const pokemonItemImage = $(".pokemonItem__image");
@@ -22,3 +23,4 @@ const abilitesTitle = $(".abilites__title");
 const movesContainer = $(".detailsContainer__moves");
 
 const closeModalFailure = $(".closeModalFail");
+const closeModalAlreadyExists = $(".closeModalAlreadyExists");

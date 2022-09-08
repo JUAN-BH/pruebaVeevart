@@ -19,7 +19,7 @@ function renderLocalPokemons(data) {
     pokemonImage.setAttribute("alt", element.name);
     pokemonName.innerText =
       element.name.charAt(0).toUpperCase() + element.name.slice(1);
-    pokemonItem.setAttribute("id", element.id);
+    pokemonItem.setAttribute("id", element.name);
     pokemonItem.appendChild(pokemonImage);
     pokemonItem.appendChild(pokemonName);
 
@@ -28,8 +28,7 @@ function renderLocalPokemons(data) {
     pokemonItem.addEventListener("click", async () => {
       const res = await fetch("/src/json/poke.json");
       const data = await res.json();
-      const pokemonFiltered = data.filter((e) => e.id == pokemonItem.id);
-      console.log(pokemonFiltered);
+      const pokemonFiltered = data.filter((e) => e.name == pokemonItem.id);
       renderDetailsPokemonLocals(pokemonFiltered);
     });
   });
@@ -102,11 +101,25 @@ function renderSearchedPokemons(data) {
   pokemonItem.appendChild(pokemonImage);
   pokemonItem.appendChild(pokemonName);
 
-  pokemonesMain.appendChild(pokemonItem);
+  let pokemonsIdsSaved = [];
+  for (const element of pokemonesMain.childNodes.entries()) {
+    pokemonsIdsSaved.push(element);
+  }
+  pokemonsIdsSaved = pokemonsIdsSaved
+    .flat()
+    .filter((e) => isNaN(e))
+    .map((e) => e.id);
+  if (pokemonsIdsSaved.includes(pokemonItem.getAttribute("id"))) {
+    modalAlreadyExists.classList.remove("hidden");
+    closeModalAlreadyExists.addEventListener("click", () => {
+      modalAlreadyExists.classList.add("hidden");
+    });
+  } else {
+    pokemonesMain.appendChild(pokemonItem);
+  }
 
   pokemonItem.addEventListener("click", async () => {
     const { data, status } = await api(`pokemon/${pokemonItem.id}`);
-    console.log(data);
     renderDetailsPokemonSearched(data);
   });
 }
@@ -158,7 +171,6 @@ function renderDetailsPokemonSearched(data) {
 async function getLocalPokemons() {
   const res = await fetch("/src/json/poke.json");
   const data = await res.json();
-  console.log(data);
   renderLocalPokemons(data);
 }
 async function getPokemonsSearch(query) {
